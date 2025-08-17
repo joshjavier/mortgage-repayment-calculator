@@ -14,7 +14,7 @@ export const buttonVariants = cva(
           'bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80',
         ghost:
           'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
-        link: 'text-primary underline-offset-4 hover:underline',
+        link: 'text-preset-4 text-slate-700 hover:text-slate-900 underline rounded-none',
       },
       size: {
         default: 'px-500 py-200',
@@ -23,6 +23,13 @@ export const buttonVariants = cva(
         icon: 'size-9',
       },
     },
+    compoundVariants: [
+      {
+        variant: 'link',
+        size: 'default',
+        class: 'p-0',
+      },
+    ],
     defaultVariants: {
       variant: 'default',
       size: 'default',
