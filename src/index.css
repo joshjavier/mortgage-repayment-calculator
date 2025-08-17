@@ -1,9 +1,27 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
+@font-face {
+  font-display: swap;
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/plus-jakarta-sans-v11-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/plus-jakarta-sans-v11-latin-700.woff2') format('woff2');
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme {
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+
   --color-lime: #d8db2f;
   --color-slate-900: #133041;
   --color-slate-700: #4e6e7e;
@@ -133,6 +151,6 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-medium;
   }
 }
