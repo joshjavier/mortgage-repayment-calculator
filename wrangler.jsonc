@@ -1,0 +1,8 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mortgage-repayment-calculator",
+  "compatibility_date": "2025-08-17",
+  "assets": {
+    "not_found_handling": "single-page-application"
+  }
+}
