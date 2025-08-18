@@ -10,13 +10,13 @@ interface ResultsProps {
 export function Results({ monthlyPayment, totalPayments }: ResultsProps) {
   const isEmpty = !monthlyPayment || !totalPayments
   return (
-    <div className="bg-slate-900 px-300 py-400 text-white sm:p-500">
+    <div className="bg-slate-900 px-300 py-400 text-white sm:p-500 lg:rounded-bl-[80px]">
       {isEmpty ? (
         <EmptyState />
       ) : (
         <div>
           <h2 className="text-preset-2 mb-200">Your results</h2>
-          <p className="text-preset-4 mb-300 text-slate-300">
+          <p className="text-preset-4 mb-300 text-slate-300 sm:mb-500">
             Your results are shown below based on the information you provided.
             To adjust the results, edit the form and click &ldquo;calculate
             repayments&rdquo; again.
