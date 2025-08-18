@@ -169,6 +169,6 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground font-medium;
+    @apply text-foreground bg-slate-100 font-medium;
   }
 }
