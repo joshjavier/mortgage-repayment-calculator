@@ -55,6 +55,8 @@
   --text-preset-5: 14px;
   --text-preset-5--font-weight: 500;
   --text-preset-5--line-height: 1.5;
+
+  --shadow-card: 0 32px 64px 0 --alpha(#133041 / 10%);
 }
 
 @theme inline {
@@ -112,7 +114,7 @@
   --accent: oklch(0.968 0.007 247.896);
   --accent-foreground: oklch(0.208 0.042 265.755);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.929 0.013 255.508);
+  --border: --alpha(var(--color-slate-300) / 25%);
   --input: oklch(0.929 0.013 255.508);
   --ring: oklch(0.704 0.04 256.788);
   --chart-1: oklch(0.646 0.222 41.116);
