@@ -2,6 +2,7 @@ import IconCalculator from '@/assets/icon-calculator.svg?react'
 import { NumberField } from '@/components/number-field/number-field'
 import { RadioButton } from '@/components/radio-button/radio-button'
 import { Button } from '@/components/ui/button'
+import { Label } from '@/components/ui/label'
 import { RadioGroup } from '@/components/ui/radio-group'
 
 export function Form() {
@@ -17,10 +18,13 @@ export function Form() {
         <NumberField label="Mortgage Amount" leftSection="£" />
         <NumberField label="Mortgage Term" rightSection="years" />
         <NumberField label="Interest Rate" rightSection="%" />
-        <RadioGroup>
-          <RadioButton label="Repayment" value="repayment" />
-          <RadioButton label="Interest Only" value="interestOnly" />
-        </RadioGroup>
+        <div>
+          <Label className="mb-150">Mortgage Type</Label>
+          <RadioGroup>
+            <RadioButton label="Repayment" value="repayment" />
+            <RadioButton label="Interest Only" value="interestOnly" />
+          </RadioGroup>
+        </div>
       </div>
 
       <Button className="sm:self-start">

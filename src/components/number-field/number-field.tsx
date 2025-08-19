@@ -26,10 +26,7 @@ export function NumberField({
   return (
     <div>
       {label && (
-        <Label
-          htmlFor={inputId}
-          className="text-preset-4 w mb-150 p-0 text-slate-700"
-        >
+        <Label htmlFor={inputId} className="mb-150">
           {label}
         </Label>
       )}

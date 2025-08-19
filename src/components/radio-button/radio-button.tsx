@@ -8,7 +8,7 @@ interface RadioButtonProps {
 
 export function RadioButton({ value, label }: RadioButtonProps) {
   return (
-    <Label className="hover:border-lime has-data-[state=checked]:bg-lime/15 has-data-[state=checked]:border-lime rounded-[4px] border border-slate-500">
+    <Label variant="radio">
       <RadioGroupItem value={value} />
       {label}
     </Label>
