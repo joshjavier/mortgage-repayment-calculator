@@ -16,8 +16,10 @@ export function Form() {
       {/* Form fields */}
       <div className="flex flex-col gap-300">
         <NumberField label="Mortgage Amount" leftSection="£" />
-        <NumberField label="Mortgage Term" rightSection="years" />
-        <NumberField label="Interest Rate" rightSection="%" />
+        <div className="grid-cols-2 gap-300 sm:grid">
+          <NumberField label="Mortgage Term" rightSection="years" />
+          <NumberField label="Interest Rate" rightSection="%" />
+        </div>
         <div>
           <Label className="mb-150">Mortgage Type</Label>
           <RadioGroup>
