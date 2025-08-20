@@ -24,7 +24,7 @@ export function TransitionPanel({
   ...motionProps
 }: TransitionPanelProps) {
   return (
-    <div className={cn('relative', className)}>
+    <div className={cn('relative h-full', className)}>
       <AnimatePresence
         initial={false}
         mode="popLayout"
@@ -37,6 +37,7 @@ export function TransitionPanel({
           initial="enter"
           animate="center"
           exit="exit"
+          className="h-full"
           {...motionProps}
         >
           {children[activeIndex]}
