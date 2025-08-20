@@ -1,7 +1,7 @@
 import { TransitionPanel } from '@/components/motion-primitives/transition-panel'
 import { Separator } from '@/components/ui/separator'
+import NumberFlow from '@number-flow/react'
 import { useAtomValue } from 'jotai'
-import { NumericFormat } from 'react-number-format'
 import { EmptyState } from './empty-state'
 import { mortgageAtom } from './state'
 
@@ -35,12 +35,9 @@ export function Results() {
               <h3 className="text-preset-4 mb-100 text-slate-300">
                 Your monthly repayments
               </h3>
-              <NumericFormat
+              <NumberFlow
                 value={monthlyPayment}
-                displayType="text"
-                thousandSeparator
-                decimalScale={2}
-                prefix="£"
+                format={{ style: 'currency', currency: 'GBP' }}
                 className="text-lime text-preset-1 max-sm:text-[40px] max-sm:leading-[normal]"
               />
             </div>
@@ -49,12 +46,9 @@ export function Results() {
               <h3 className="text-preset-4 mb-100 text-slate-300">
                 Total you'll repay over the term
               </h3>
-              <NumericFormat
+              <NumberFlow
                 value={totalPayments}
-                displayType="text"
-                thousandSeparator
-                decimalScale={2}
-                prefix="£"
+                format={{ style: 'currency', currency: 'GBP' }}
                 className="text-preset-2"
               />
             </div>
