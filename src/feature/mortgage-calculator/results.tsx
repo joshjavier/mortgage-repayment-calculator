@@ -1,13 +1,11 @@
 import { Separator } from '@/components/ui/separator'
+import { useAtomValue } from 'jotai'
 import { NumericFormat } from 'react-number-format'
 import { EmptyState } from './empty-state'
+import { mortgageAtom } from './state'
 
-interface ResultsProps {
-  monthlyPayment?: number
-  totalPayments?: number
-}
-
-export function Results({ monthlyPayment, totalPayments }: ResultsProps) {
+export function Results() {
+  const { monthlyPayment, totalPayments } = useAtomValue(mortgageAtom)
   const isEmpty = !monthlyPayment || !totalPayments
   return (
     <div className="bg-slate-900 px-300 py-400 text-white sm:p-500 lg:rounded-bl-[80px]">
@@ -30,6 +28,7 @@ export function Results({ monthlyPayment, totalPayments }: ResultsProps) {
                 value={monthlyPayment}
                 displayType="text"
                 thousandSeparator
+                decimalScale={2}
                 prefix="£"
                 className="text-lime text-preset-1 max-sm:text-[40px] max-sm:leading-[normal]"
               />
@@ -43,6 +42,7 @@ export function Results({ monthlyPayment, totalPayments }: ResultsProps) {
                 value={totalPayments}
                 displayType="text"
                 thousandSeparator
+                decimalScale={2}
                 prefix="£"
                 className="text-preset-2"
               />
