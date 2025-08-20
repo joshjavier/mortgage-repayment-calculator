@@ -15,6 +15,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import z from 'zod'
+import { calculateMortgage } from '../services/mortgage'
 import { TitleBar } from './title-bar'
 
 const preprocessFn = (val: string | number) => {
@@ -36,9 +37,12 @@ const formSchema = z.object({
   type: z.literal(['repayment', 'interestOnly'], 'This field is required'),
 })
 
+type FormFields = z.input<typeof formSchema>
+type FormPayload = z.output<typeof formSchema>
+
 export function Form() {
   const [key, setKey] = useState(+new Date())
-  const form = useForm<z.input<typeof formSchema>>({
+  const form = useForm<FormFields>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       amount: '',
@@ -47,8 +51,10 @@ export function Form() {
     },
   })
 
-  const onSubmit = (values: z.input<typeof formSchema>) => {
-    console.log(values)
+  const onSubmit = (values: unknown) => {
+    const { amount, term, interest, type } = values as FormPayload
+    const results = calculateMortgage(amount, term, interest, type)
+    console.log(results)
   }
 
   const onReset = () => {
